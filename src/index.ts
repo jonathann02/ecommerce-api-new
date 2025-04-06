@@ -16,7 +16,7 @@ app.use(cors({
   methods: ["GET", "POST", "PATCH", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   //origin: "*",
-  //credentials: false,  // ✅ Allows cookies
+  credentials: true,  // ✅ Allows cookies
 }));
 
 // Routes
@@ -36,10 +36,10 @@ app.use('/auth', authRouter)
 // Attempt to connect to the database
 connectDB()
 // Start Express server
-const PORT = 3000;
+/* const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`The server is running at http://localhost:${PORT}`);
-})
+}) */
 
 export default (req: VercelRequest, res: VercelResponse) => {
   return app(req, res);
