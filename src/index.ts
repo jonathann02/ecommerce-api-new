@@ -12,10 +12,8 @@ const app = express();
 app.use(express.json())
 app.use(cookieParser());
 app.use(cors({
-  origin: "http://localhost:5173",
-  methods: ["GET", "POST", "PATCH", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  //origin: "*",
+  // origin: "http://localhost:5173",
+  origin: "*",    //Live URL ist för * om man har auth
   credentials: true,  // ✅ Allows cookies
 }));
 
@@ -36,10 +34,10 @@ app.use('/auth', authRouter)
 // Attempt to connect to the database
 connectDB()
 // Start Express server
-/* const PORT = 3000;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`The server is running at http://localhost:${PORT}`);
-}) */
+})
 
 export default (req: VercelRequest, res: VercelResponse) => {
   return app(req, res);
