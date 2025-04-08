@@ -12,8 +12,8 @@ const app = express();
 app.use(express.json())
 app.use(cookieParser());
 app.use(cors({
-  // origin: "http://localhost:5173",
-  origin: "*",    //Live URL ist för * om man har auth
+  // origin: "http://localhost:5173", 
+  origin: ["https://ecommerce-website-phi-lilac.vercel.app/"],
   credentials: true,  // ✅ Allows cookies
 }));
 
