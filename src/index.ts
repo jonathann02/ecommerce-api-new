@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(cors({
   // origin: "http://localhost:5173", 
-  origin: ["https://ecommerce-website-4z2yy4br3-jonathans-projects-01da1bd7.vercel.app/"],
+  origin: ["https://ecommerce-website-phi-lilac.vercel.app"],
   credentials: true,  // ✅ Allows cookies
 }));
 
