@@ -11,8 +11,8 @@ export const createHostedCheckoutSession = async (req: Request, res: Response) =
             payment_method_types: ["card"], 
             line_items, 
             mode: "payment",
-            success_url: 'https://ecommerce-website-phi-lilac.vercel.app/order-confirmation?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url: 'https://ecommerce-website-phi-lilac.vercel.app/cart',
+            success_url: 'https://ecommerce-website-phi-lilac.vercel.app/#/order-confirmation?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url: 'https://ecommerce-website-phi-lilac.vercel.app/#/cart',
             client_reference_id: order_id?.toString(), 
         })
 
